@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
       fail_signup_msg
       redirect '/'
     else
-      @username = User.username
+      @username = params[:username]
       @user = User.create(username: params[:username], email: params[:email], password: params[:password])
       session[:user_id] = @user.id
       redirect '/posts'
@@ -35,6 +35,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
+    @username = params[:username]
     @user = User.find_by(params[:id])
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id
