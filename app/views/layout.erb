@@ -19,22 +19,36 @@
         <div class="container">
 
           <div class="col-md-8 col-md-offset-2">
+
             <h2>Layout header</h2>
 
             <%= yield %>
 
             <div class="sidebar">
+              <%= flash[:fail_signup]%>
+              <%= flash[:fail_login] %><br>
               <h3>Log In</h3>
               <div class="log_in_form">
                 <form action="/login" method="POST">
                   <label for="username">Username</label>
-                  <input type="text" name="username" id="username">
-                  <br><br>
+                  <input type="text" name="username" id="username"><br>
                   <label for="password">Password</label>
-                  <input type="text" name="password" id="password">
-                  <br><br>
+                  <input type="text" name="password" id="password"><br>
                   <input type="submit" value="Login" id="submit">
                 </form>
+              </div>
+              <br><br>
+              <div>
+                <h3>Sign Up</h3>
+                <form action="/signup" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username"><br>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email"><br>
+                    <label for="password">Password:</label>
+                    <input type="text" name="password" id="password"><br>
+                    <input type="submit" value="Sign Up" id="Submit">
+                  </form>
               </div>
 
             </div>

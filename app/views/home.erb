@@ -1,8 +1,15 @@
 
-    <p>Sinatra Template Default Page</p>
+    <p>Crowd sourced data</p>
 
     <div class="content">
-      <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
-      as expected. To get started, delete this file (<code>app/views/welcome.erb)</code> and begin adding
-      your own actions to <code>application_controller.rb</code>. For more information, see the <a href="https://github.com/thebrianemory/corneal">README</a>.</p>
+      <p>Data-requesta let's you request big data for your latest data science projects.
+        Just make a request and our crowd sourcers will find exactly the data you're looking for! <br><br>
+        <a href="https://github.com/thebrianemory/corneal">README</a>
+      </p>
+    </div>
+
+    <div>
+      <% Post.all.each do |post| %>
+        <%= post.description %><br><br>
+      <% end%>
     </div>
