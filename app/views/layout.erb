@@ -24,13 +24,19 @@
             <%= yield %>
 
             <div class="sidebar">
-              <h3>Environment</h3>
-              <ul>
-                <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
-                <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
-                <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
-                <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
-              </ul>
+              <h3>Log In</h3>
+              <div class="log_in_form">
+                <form action="/login" method="POST">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                  <br><br>
+                  <label for="password">Password</label>
+                  <input type="text" name="password" id="password">
+                  <br><br>
+                  <input type="submit" value="Login" id="submit">
+                </form>
+              </div>
+
             </div>
 
           </div>
