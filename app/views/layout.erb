@@ -16,7 +16,25 @@
   <body>
     <div class="wrapper">
 
-        <%= yield %>
+        <div class="container">
+
+          <div class="col-md-8 col-md-offset-2">
+            <h2>Layout header</h2>
+
+            <%= yield %>
+
+            <div class="sidebar">
+              <h3>Environment</h3>
+              <ul>
+                <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+                <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+                <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+                <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
 
       <footer class="branding">
         <small>&copy; 2019 <strong>DataRequesta</strong></small>
