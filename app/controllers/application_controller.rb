@@ -12,14 +12,11 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "data_req"
   end
 
-  get "/" do
-    erb :home
-  end
 
   get '/' do
     available_posts
     if logged_in?
-      #redirect '/tweets'
+      erb :home
     else
       erb :home
     end
@@ -27,10 +24,10 @@ class ApplicationController < Sinatra::Base
 
   post '/signup' do
     if params[:username].empty? || params[:email].empty? || params[:password].empty?
-      # redirect '/signup'
       fail_signup_msg
       redirect '/'
     else
+      @username = User.username
       @user = User.create(username: params[:username], email: params[:email], password: params[:password])
       session[:user_id] = @user.id
       redirect '/posts'
@@ -41,9 +38,18 @@ class ApplicationController < Sinatra::Base
     @user = User.find_by(params[:id])
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect '/tweets'
+      redirect '/posts'
     else
       fail_login_msg
+      redirect '/'
+    end
+  end
+
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect '/'
+    else
       redirect '/'
     end
   end
@@ -67,7 +73,14 @@ class ApplicationController < Sinatra::Base
     end
 
     def available_posts
-      if 
+      if Post.all.empty?
+        @posts_available = ' No posts availablex'
+      else
+          @posts_available = '<% Post.all.each do |post| %>
+          <%= post.description %><br><br>
+          <% end%>'
+      end
+
     end
   end
 

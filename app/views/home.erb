@@ -8,8 +8,6 @@
       </p>
     </div>
 
-    <div>
-      <% Post.all.each do |post| %>
-        <%= post.description %><br><br>
-      <% end%>
+    <div class="post_listings">
+      <%= @posts_available %>
     </div>

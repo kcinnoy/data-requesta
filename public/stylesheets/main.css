@@ -113,3 +113,9 @@
     line-height: 24px;
   }
 }
+
+.post_listings {
+  float: left;
+  clear: left;
+  background: lightgrey;
+}

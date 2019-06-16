@@ -1,0 +1,7 @@
+
+  <div>
+    <p>All tweets</p>
+    <% Post.all.each do |post| %>
+    <%= post.description %><br><br>
+    <% end%>
+  </div>
