@@ -12,10 +12,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "data_req"
   end
 
-
   get '/' do
     available_posts
     if logged_in?
+      show_userf
       erb :home
     else
       erb :home
@@ -63,6 +63,15 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= User.find_by(id: session[:user_id])
     end
+
+    def show_userf
+      if logged_in?
+        @show_user = @current_user.username
+      else
+        @show_user = ""
+      end
+    end
+
 
     def fail_signup_msg
       flash[:fail_signup]='Sign up failed. Please complete all fields and press submit'

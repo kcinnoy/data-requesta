@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   get '/posts' do
+    show_userf
     if logged_in?
       erb :'/posts/all'
     else
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
     end
   end
 
-  post '/tweets' do
+  post '/posts' do
     if logged_in? && params[:content] != ""
       @tweet = Tweet.create(content: params[:content])
       @tweet.user = User.find_by(params[:id])
