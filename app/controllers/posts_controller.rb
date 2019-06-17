@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   get '/posts' do
-    show_userf
+    show_username
     if logged_in?
       erb :'/posts/all'
     else
@@ -9,58 +9,58 @@ class PostsController < ApplicationController
     end
   end
 
-  get '/tweets/new' do
+  get '/posts/new' do
     if logged_in?
-      erb :'/tweets/new'
+      erb :'/posts/new'
     else
-      redirect '/login'
+      redirect '/'
     end
   end
 
   post '/posts' do
-    if logged_in? && params[:content] != ""
-      @tweet = Tweet.create(content: params[:content])
-      @tweet.user = User.find_by(params[:id])
-      @tweet.save
+    if logged_in? && params[:title] != ""
+      @post = Post.create( params[:post])
+      @post.user = User.find_by(params[:id])
+      @post.save
 
-      redirect "/tweets/#{@tweet.id}"
+      redirect "/posts/#{@post.id}"
     else
       redirect '/login'
     end
   end
 
-  get '/tweets/:id' do
+  get '/posts/:id' do
     if logged_in?
-      @tweet = Tweet.find_by(params[:id])
-      erb :'/tweets/show_tweet'
+      @post = Tweet.find_by(params[:id])
+      erb :'/posts/show_post'
     else
       redirect '/login'
     end
   end
 
-  get '/tweets/:id/edit' do
+  get '/posts/:id/post' do
     if logged_in?
-      @tweet = Tweet.find_by(params[:id])
-      erb :'/tweets/edit_tweet'
+      @post = Post.find_by(params[:id])
+      erb :'/post/edit_post'
     else
       redirect '/login'
     end
   end
 
-  patch '/tweets/:id' do
+  patch '/posts/:id' do
     @tweet = Tweet.find_by(params[:id])
     if params[:content].empty?
-      redirect "/tweets/#{@tweet.id}/edit"
+      redirect "/posts/#{@post.id}/edit"
     else
-      @tweet.update(content: params[:content])
-      @tweet.save
-      redirect "/tweets/#{@tweet.id}"
+      @post.update(content: params[:content])
+      @post.save
+      redirect "/posts/#{@post.id}"
     end
   end
 
-  delete '/tweets/:id/delete' do
-    @tweet = Tweet.find_by(params[:id])
-    @tweet.delete
-    redirect '/tweets'
+  delete '/posts/:id/delete' do
+    @post = Post.find_by(params[:id])
+    @post.delete
+    redirect '/posts'
   end
 end

@@ -15,7 +15,6 @@ class ApplicationController < Sinatra::Base
   get '/' do
     available_posts
     if logged_in?
-      show_userf
       erb :home
     else
       erb :home
@@ -64,7 +63,7 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id])
     end
 
-    def show_userf
+    def show_username
       if logged_in?
         @show_user = @current_user.username
       else
