@@ -21,8 +21,10 @@ class PostsController < ApplicationController
   post '/posts' do
     if logged_in? && params[:title] != ""
       @post = Post.create(params[:post])
-      @post.user = User.find_by(params[:id])
+      @post.user = @current_user
       @post.save
+      puts "#{@post.user}"
+      puts "#{@current_user.username}"
 
       redirect "/posts/#{@post.id}"
     else
@@ -31,6 +33,7 @@ class PostsController < ApplicationController
   end
 
   get '/posts/:id' do
+    show_username
     if logged_in?
       @post = Post.find(params[:id])
       erb :'/posts/show_post'
