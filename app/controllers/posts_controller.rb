@@ -50,7 +50,7 @@ class PostsController < ApplicationController
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
-    if params[:title].empty?
+    if params[:title]
       redirect "/posts/#{@post.id}/edit"
     else
       @post.update(params[:post])
@@ -68,9 +68,14 @@ class PostsController < ApplicationController
    end
  end
 
-  delete '/posts/:id/delete' do
-    @post = Post.find_by(params[:id])
+delete '/posts/:id/delete' do
+  if logged_in?
+    @post = Post.find(params[:id])
     @post.delete
-    redirect '/posts'
+    erb :home
+  else
+    redirect "/"
   end
+end
+
 end

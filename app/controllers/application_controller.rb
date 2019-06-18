@@ -86,8 +86,14 @@ class ApplicationController < Sinatra::Base
       if Post.all.empty?
         @posts_available = ' No posts availablex'
       end
-
     end
+
+    def post_username
+      @user_id_ = @post.user_id
+      @user_id_n = User.find(params[user_id_])
+      @user_name_ = @user_id_n.username
+    end
+
   end
 
 
