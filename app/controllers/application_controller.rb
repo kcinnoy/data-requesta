@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     available_posts
+    show_username
     if logged_in?
       erb :home
     else
@@ -84,10 +85,6 @@ class ApplicationController < Sinatra::Base
     def available_posts
       if Post.all.empty?
         @posts_available = ' No posts availablex'
-      else
-          @posts_available = '<% Post.all.each do |post| %>
-          <%= post.description %><br><br>
-          <% end%>'
       end
 
     end
