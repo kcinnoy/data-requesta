@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   patch '/posts/:id' do
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
     if params[:title].empty?
       redirect "/posts/#{@post.id}/edit"
     else
@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 
   get '/posts/:id/edit' do
    if logged_in?
-     @post = Post.find_by(params[:id])
+     @post = Post.find(params[:id])
      erb :'/posts/edit_post'
    else
      redirect '/'
