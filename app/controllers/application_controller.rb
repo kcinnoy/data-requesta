@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    current_user
     available_posts
     show_username
     if logged_in?

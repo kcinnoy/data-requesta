@@ -2,17 +2,11 @@
 
 <h3>Update details </h3>
 
-form
-  username
-  passord
-
-form
-
 <form action="/users/<%= @user.id%>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 <label for="username">Username:</label>
 <input type="text" name="user[username]" value="<%= @user.username %>" id="username"><br>
-<label for="password">Password:</label><br>
-<input type="text" name="user[password]" value="<%= @user.password %>" id="password"><br>
-<input type="submit" value="Update" id="submit">
+<label for="username">Email:</label>
+<input type="text" name="user[email]" value="<%= @user.email %>" id="email"><br>
+<input type="submit" value="Update" id="submit"><br>
 </form>

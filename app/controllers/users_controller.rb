@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # end
 
   get '/profile' do
+    show_username
     @current_user = current_user
     @user = @current_user
     show_username
@@ -34,19 +35,32 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/posts' do
-    if logged_in? && params[:title] != ""
-      @post = Post.create(params[:post])
-      @post.user = @current_user
-      @post.save
-      puts "#{@post.user}"
-      puts "#{@current_user.username}"
+  # post '/posts' do
+  #   if logged_in? && params[:title] != ""
+  #     @post = Post.create(params[:post])
+  #     @post.user = @current_user
+  #     @post.save
+  #     puts "#{@post.user}"
+  #     puts "#{@current_user.username}"
+  #
+  #     redirect "/posts/#{@post.id}"
+  #   else
+  #     redirect '/'
+  #   end
+  # end
 
-      redirect "/posts/#{@post.id}"
-    else
-      redirect '/'
-    end
-  end
+  patch '/users/:id' do
+        show_username
+        current_user
+      #  if params[:username] || params[:password]
+        if false
+           redirect '/users/profile'
+       else
+           @user = User.find_by(:id => params[:id])
+           @user.update(params[:user])
+           erb :'users/profile'
+       end
+   end
 
 
   get '/logout' do
@@ -61,7 +75,7 @@ class UsersController < ApplicationController
   get '/users/:slug' do
     @user = User.find_by(params[:id])
 
-    erb :'/users/show'
+    erb :'/users/profile'
   end
 
 end
