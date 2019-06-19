@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
-    if params[:title]
+    if params[:post][:title].empty? || params[:post][:description].empty?
       redirect "/posts/#{@post.id}/edit"
     else
       @post.update(params[:post])

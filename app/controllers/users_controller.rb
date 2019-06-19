@@ -51,10 +51,9 @@ class UsersController < ApplicationController
 
   patch '/users/:id' do
         show_username
-        current_user
-      #  if params[:username] || params[:password]
-        if false
-           redirect '/users/profile'
+        @user = current_user
+        if params[:user][:username].empty? || params[:user][:email].empty?
+           erb :'users/profile'
        else
            @user = User.find_by(:id => params[:id])
            @user.update(params[:user])
