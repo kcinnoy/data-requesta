@@ -36,6 +36,7 @@ class PostsController < ApplicationController
     show_username
     if logged_in?
       @post = Post.find(params[:id])
+      @user_n = User.find(@post.user_id).username
       erb :'/posts/show_post'
     else
       redirect '/'
@@ -65,7 +66,12 @@ class PostsController < ApplicationController
   get '/posts/:id/edit' do
    if logged_in?
      @post = Post.find(params[:id])
-     erb :'/posts/edit_post'
+     if current_user.id == @post.user_id
+       erb :'/posts/edit_post'
+     else
+       puts "flash message"
+       redirect '/'
+    end
    else
      redirect '/'
    end

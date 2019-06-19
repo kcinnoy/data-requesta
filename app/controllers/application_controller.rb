@@ -99,6 +99,16 @@ class ApplicationController < Sinatra::Base
       @user_name_ = @user_id_n.username
     end
 
+    def allow_edit?
+      puts "c_user#{@current_user.id}"
+      puts "user:#{@post.user_id}"
+      @allowed
+      if @current_user.id == @post.user_id
+        @allowed = true
+      else
+        @allowed = false
+      end
+    end
   end
 
 

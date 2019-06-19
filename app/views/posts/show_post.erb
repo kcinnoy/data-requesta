@@ -1,5 +1,11 @@
-<%= @post.description %>-<%= @post.user_id %>-<%= @post.id %> <a href="/posts/<%= @post.id %>/edit">Edit</a>
-<form action="/posts/<%= @post.id %>/delete" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Tweet" id="submit">
-</form>
+<%= @post.id %>. <%= @post.title %><br>
+<%= @post.description %><br>
+<p>Posted by: <%= @user_n %></p>
+
+<%if allow_edit? %>
+  <a href="/posts/<%= @post.id %>/edit">Edit</a>
+  <form action="/posts/<%= @post.id %>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Tweet" id="submit">
+  </form>
+<%end%>
