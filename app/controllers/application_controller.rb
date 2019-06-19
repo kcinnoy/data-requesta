@@ -109,6 +109,8 @@ class ApplicationController < Sinatra::Base
         @allowed = false
       end
     end
+
+    
   end
 
 
