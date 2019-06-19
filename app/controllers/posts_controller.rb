@@ -65,8 +65,9 @@ class PostsController < ApplicationController
 
   get '/posts/:id/edit' do
    if logged_in?
-     @post = Post.find(params[:id])
-     if current_user.id == @post.user_id
+    @post = Post.find(params[:id])
+    #  if current_user.id == @post.user_id
+    if allow_edit?
        erb :'/posts/edit_post'
      else
        puts "flash message"

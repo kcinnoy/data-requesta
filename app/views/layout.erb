@@ -22,7 +22,9 @@
 
 
 
-            <h2>Layout header, <%= @show_user %></h2> <a href="/logout">Logout</a>   <a href="/profile"><%= @show_user%></a> <br>
+            <h2>Layout header, <%= @show_user %></h2>
+            <if logged_in?
+            <a href="/logout">Logout</a>   <a href="/profile"><%= @show_user%></a> <br>
 
             <%= yield %>
 
