@@ -16,7 +16,9 @@
     <div class="post_listings">
       <% Post.all.each do |post| %>
 
-        <a href="/posts/<%= post.id %>"><%= post.description %>-<%= post.id %>- <%= post.user_id %></a><br><br>
+        <a href="/posts/<%= post.id %>"><%= post.description %>-<%= post.id %>- <%= post.user_id %></a>
+        <% u_name = User.find(post.user_id).username %>
+        <%= u_name %><br>
 
       <% end%>
     </div>
