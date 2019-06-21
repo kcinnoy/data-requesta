@@ -49,14 +49,15 @@ table {
 }
 
 .header-main {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 60px;
   /*background: black;*/
   padding: 10px 10px;
-  /*border-radius: 5px;
-  box-shadow: 5px 55px 50px -20px #b6b6b6;*/
+  border-radius: 5px;
+  box-shadow: 5px 55px 50px -20px #b6b6b6;
 
 
 }
@@ -69,9 +70,9 @@ ul {
 
 .top-navx {
   /*background-color: white;*/
-  width: 80%;
+  width: 95%;
   display: flex;
-  height: 40px;
+  height: 60px;
   align-items: center;
   padding: 0 10px;
   border: 1px solid rgba(238,238,238 ,1);
@@ -105,4 +106,19 @@ ul {
 
 .nav-search-bar{
   margin-right: auto;
+}
+
+.search-bar-input {
+  line-height: 30px;
+  width: 350px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #666;
+  padding: 0 17px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
