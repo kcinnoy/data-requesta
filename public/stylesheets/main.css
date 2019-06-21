@@ -105,13 +105,31 @@ ul {
 }
 
 .nav-search-bar{
-  margin-right: auto;
+
+}
+
+.nav-search-btn {
+  margin-right: auto !important;
+}
+
+.nav-search-btn-btn {
+    position: relative;
+    right: 0;
+    min-width: 65px;
+    line-height: 30px;
+    border: 1px solid #e5e5e5;
+    border-left: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: -3px;
 }
 
 .search-bar-input {
+  margin-right: 0px;
   line-height: 30px;
   width: 350px;
   border: 1px solid #e5e5e5;
+  border-right: 0px;
   font-size: 14px;
   color: #666;
   padding: 0 17px;
