@@ -1,121 +1,108 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
 
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-  /* --- Welcome Page Styles --- */
-  body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
-  }
-
-  .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 54px;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  p {
-    margin-bottom: 18px;
-  }
-
-  .main {
-    overflow: hidden;
-  }
-
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
-  }
-
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
-  .sidebar ul {
-    font-size: 14px;
-  }
-
-  .branding {
-    clear: both;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: auto;
-  }
+.header-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  /*background: black;*/
+  padding: 10px 10px;
+  /*border-radius: 5px;
+  box-shadow: 5px 55px 50px -20px #b6b6b6;*/
 
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
 
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
-  }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
 }
 
-.post_listings {
-  float: left;
-  clear: left;
-  background: lightgrey;
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.top-navx {
+  /*background-color: white;*/
+  width: 80%;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(238,238,238 ,1);
+  border-radius: 5px;
+  color: rgba(117,117,117 ,1);
+  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+}
+.top-navx li {
+  cursor: pointer;
+}
+.top-navx li:hover{
+  color: rgba(85,172,238 ,1);
+}
+.twitter__bird {
+  color: rgba(85,172,238 ,1);
+  font-size: 1.3em;
+}
+.top-navx li:not(:last-child):not(.nav-search-bar) {
+  margin-right: 10px;
+}
+.twitter li  i:not(.fa-twitter):not(.fa-search):not(.fa-user-circle-o) {
+  margin-right: 3px;
+}
+.twitter li > button {
+  font-size: 0.8em;
+  border: 0;
+  background: rgba(85,172,238 ,1);
+  color: #fff;
+  border-radius: 100px;
+}
+
+.nav-search-bar{
+  margin-right: auto;
 }
