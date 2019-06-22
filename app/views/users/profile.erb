@@ -1,12 +1,41 @@
-<h2><%= @show_user%>'s Profile</h2>
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="bg-header" style="background-image:url(https://media.giphy.com/media/3tKhIPrQvT7XVqQKIm/giphy.gif);">
+                        <div class="bg-overlay"></div>
+                    </div>
+                        <div class="card-body form-bdy">
+                          <h2><%= @show_user%>'s Profile</h2>
+                            <div>
+                                <form action="/users/<%= @user.id%>" method="POST">
+                                  <input id="hidden" type="hidden" name="_method" value="PATCH">
+                                  <label for="username">Username:</label>
+                                  <input class="form-inputx" type="text" name="user[username]" value="<%= @user.username %>" id="username"><br>
+                                  <label for="username">Email:</label>
+                                  <input class="form-inputx" type="text" name="user[email]" value="<%= @user.email %>" id="email"><br>
+                                  <input class="log-sign-btn-modal" type="submit" value="Update" id="submit"><br>
+                                </form>
+                            </div>
+                        </div>
 
-<h3>Update details </h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="card-link">Card link</a>
+                                  <a href="#" class="card-link">Another link</a>
+                                </div>
+                    </div>
+                </div>
 
-<form action="/users/<%= @user.id%>" method="POST">
-<input id="hidden" type="hidden" name="_method" value="PATCH">
-<label for="username">Username:</label>
-<input type="text" name="user[username]" value="<%= @user.username %>" id="username"><br>
-<label for="username">Email:</label>
-<input type="text" name="user[email]" value="<%= @user.email %>" id="email"><br>
-<input type="submit" value="Update" id="submit"><br>
-</form>
+            </div>
+        </div>
+    </div>
+</div>

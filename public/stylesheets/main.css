@@ -35,6 +35,9 @@ header.header-main {
   box-shadow: 5px 55px 50px -20px #b6b6b6;
 }
 
+a {
+	color: darkgrey !important;
+}
 
 ul {
   padding: 0;
@@ -201,6 +204,7 @@ div .form-inputx {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	width: 80%;
+	padding-left: 10px;
 }
 
 .log-in-form{
@@ -243,7 +247,7 @@ a.log-sign-btn-modal {
 
 .main-content {
     padding-top: 10px;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 .hide-el {

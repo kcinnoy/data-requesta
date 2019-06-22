@@ -1,15 +1,3 @@
-<h1>Edit Post</h1>
-<form action="/posts/<%= @post.id%>" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <label for="title">Title:</label>
-  <input type="text" name="post[title]" value="<%= @post.description %>" id="title"><br>
-  <label for="description">Description:</label><br>
-  <textarea name="post[description]" value="<%= @post.description %>" id="description"><%= @post.description %></textarea><br>
-  <!-- <label for="category">Category:</label>
-  <input type="text" name="post[category]" value="#{post.category}" id="category"><br> -->
-  <input type="submit" value="Submit" id="submit">
-</form>
-
 <div class="main-content">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
@@ -22,13 +10,17 @@
                         <div class="card-body form-bdy">
                             <h5 class="card-title">Edit Post</h5>
                             <div>
-                                <form action="/posts" method="POST">
+                                <form action="/posts/<%= @post.id%>" method="POST">
+                                  <input id="hidden" type="hidden" name="_method" value="PATCH">
                                   <label for="title">Title:</label>
-                                  <input class="form-inputx" type="text" name="post[title]" value="" id="title"><br>
-                                  <label for="description">Description:</label>
-                                  <input class="form-inputx" type="text" name="post[description]" value="" id="description"><br>
+                                  <input class="form-inputx" type="text" name="post[title]" value="<%= @post.description %>" id="title"><br>
+                                  <label for="description">Description:</label><br>
+                                  <textarea class="form-inputx" name="post[description]" value="<%= @post.description %>" id="description"><%= @post.description %></textarea><br>
+                                  <!-- <label for="category">Category:</label>
+                                  <input type="text" name="post[category]" value="#{post.category}" id="category"><br> -->
                                   <input class="log-sign-btn-modal" type="submit" value="Submit" id="submit">
                                 </form>
+
                             </div>
                         </div>
 
@@ -46,13 +38,6 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright">
-                        <p>Made with <i class="fas fa-heart"></i> by FlatIron Student Yonnick || Kcinnoy</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
