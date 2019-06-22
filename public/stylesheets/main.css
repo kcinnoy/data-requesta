@@ -219,3 +219,36 @@ div.post-img {
 	margin-right: 15px;
 	padding-top: 15px
 }
+
+div .form-inputx {
+	border: 1px solid #e5e5e5;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	width: 80%;
+}
+
+.log-in-form{
+	background: rgba(224,224,224 ,1);
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px
+}
+
+.sign-in-form{
+	background: rgba(238,238,238 ,1);
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.log-sign-btn-modal {
+	padding: 5px;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	background: rgba(29,233,182 ,0)
+}
+
+.fail-logsignx {
+	background: rgba(248,187,208 ,1)
+}
