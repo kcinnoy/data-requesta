@@ -9,3 +9,51 @@
   <input type="text" name="post[category]" value="#{post.category}" id="category"><br> -->
   <input type="submit" value="Submit" id="submit">
 </form>
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="bg-header" style="background-image:url(https://media.giphy.com/media/3tKhIPrQvT7XVqQKIm/giphy.gif);">
+                        <div class="bg-overlay"></div>
+                    </div>
+                        <div class="card-body form-bdy">
+                            <h5 class="card-title">Edit Post</h5>
+                            <div>
+                                <form action="/posts" method="POST">
+                                  <label for="title">Title:</label>
+                                  <input class="form-inputx" type="text" name="post[title]" value="" id="title"><br>
+                                  <label for="description">Description:</label>
+                                  <input class="form-inputx" type="text" name="post[description]" value="" id="description"><br>
+                                  <input class="log-sign-btn-modal" type="submit" value="Submit" id="submit">
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="card-link">Card link</a>
+                                  <a href="#" class="card-link">Another link</a>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p>Made with <i class="fas fa-heart"></i> by FlatIron Student Yonnick || Kcinnoy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

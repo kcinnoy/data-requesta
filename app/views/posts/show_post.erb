@@ -1,11 +1,64 @@
-<%= @post.id %>. <%= @post.title %><br>
-<%= @post.description %><br>
-<p>Posted by: <%= @user_n %></p>
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="bg-header" style="background-image:url(https://media.giphy.com/media/3tKhIPrQvT7XVqQKIm/giphy.gif);">
+                        <div class="bg-overlay"></div>
+                    </div>
+                        <div class="card-body form-bdy">
+                            <!-- <h5 class="card-title">Create a New Post</h5> -->
+                              <div class="list-grp-bdy">
+                                <div class="post-img">
+                                  <%= @post.id %>
+                                </div>
+                                <div>
+                                  Title: <%= @post.title %><br>
+                                  Description: <a href="/posts/<%= @post.id %>"><%= @post.description %></a><br>
+                                <% @post.user_id %>
+                                <% u_name = User.find(@post.user_id).username %>
+                                Posted by: <%= u_name %><br><br>
 
-<%if allow_edit? %>
-  <a href="/posts/<%= @post.id %>/edit">Edit</a>
-  <form action="/posts/<%= @post.id %>/delete" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Tweet" id="submit">
-  </form>
-<%end%>
+
+
+                              </div>
+
+                            </div>
+                              <div class="btn-bdy">
+                                <%if allow_edit? %>
+                                  <a class="log-sign-btn-modal" href="/posts/<%= @post.id %>/edit" role="button">Edit</a>
+                                  <!-- <a href="/posts/<%= @post.id %>/edit">Edit</a> -->
+                                  <form action="/posts/<%= @post.id %>/delete" method="POST">
+                                    <input id="hidden" type="hidden" name="_method" value="DELETE">
+                                    <input class="log-sign-btn-modal" type="submit" value="Delete" id="submit">
+                                  </form>
+                                <%end%>
+                              </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="card-link">Card link</a>
+                                  <a href="#" class="card-link">Another link</a>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p>Made with <i class="fas fa-heart"></i> by FlatIron Student Yonnick || Kcinnoy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
