@@ -19,14 +19,17 @@ class PostsController < ApplicationController
   end
 
   post '/posts' do
-    if logged_in? && params[:title] != ""
-      @post = Post.create(params[:post])
-      @post.user = @current_user
-      @post.save
-      puts "#{@post.user}"
-      puts "#{@current_user.username}"
-
-      redirect "/posts/#{@post.id}"
+    if logged_in?
+      if params[:post][:title].empty? || params[:post][:description].empty?
+        redirect '/posts/new'
+      else
+        @post = Post.create(params[:post])
+        @post.user = @current_user
+        @post.save
+        puts "#{@post.user}"
+        puts "#{@current_user.username}"
+        redirect "/posts/#{@post.id}"
+      end
     else
       redirect '/'
     end

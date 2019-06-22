@@ -192,10 +192,10 @@ div.post-img {
 
 div .form-inputx {
 	border: 1px solid #e5e5e5;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 	width: 80%;
 }
 
@@ -216,7 +216,7 @@ div .form-inputx {
 	padding: 5px;
 	border: 1px solid #e5e5e5;
 	border-radius: 5px;
-	background: rgba(29,233,182 ,0)
+	background: rgba(255,204,128 ,1)
 }
 
 .fail-logsignx {
@@ -246,7 +246,16 @@ div .form-inputx {
 	visibility: visible;
 }
 
-.btn-dr{
-	background: rgba(178,223,219 ,1);
-	color: black;
+a.btn-dr{
+	background: rgba(255,204,128 ,1);
+	color: darkgrey;
+		font-family: 'Dhurjati';
+}
+
+div.new-post {
+	display: flex;
+}
+
+div.form-bdy {
+	background: rgba(245,245,245 ,1);
 }

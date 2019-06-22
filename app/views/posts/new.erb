@@ -7,12 +7,18 @@
                         <div class="bg-header" style="background-image:url(https://media.giphy.com/media/3tKhIPrQvT7XVqQKIm/giphy.gif);">
                         <div class="bg-overlay"></div>
                     </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Make a request for data!</h5>
-                            
+                        <div class="card-body form-bdy">
+                            <h5 class="card-title">Create a New Post</h5>
+                            <div>
+                                <form action="/posts" method="POST">
+                                  <label for="title">Title:</label>
+                                  <input class="form-inputx" type="text" name="post[title]" value="" id="title"><br>
+                                  <label for="description">Description:</label>
+                                  <input class="form-inputx" type="text" name="post[description]" value="" id="description"><br>
+                                  <input class="log-sign-btn-modal" type="submit" value="Submit" id="submit">
+                                </form>
+                            </div>
                         </div>
-
-                        goes here
 
                     </div>
                 </div>
