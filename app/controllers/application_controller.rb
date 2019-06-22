@@ -99,6 +99,22 @@ class ApplicationController < Sinatra::Base
       @user_name_ = @user_id_n.username
     end
 
+    def tog_el
+      if logged_in?
+        "hide-el"
+      else
+        "show_el"
+      end
+    end
+
+    def tog_el_out
+      if logged_in?
+        "show_el"
+      else
+        "hide-el"
+      end
+    end
+
     def allow_edit?
       puts "c_user#{@current_user.id}"
       puts "user:#{@post.user_id}"

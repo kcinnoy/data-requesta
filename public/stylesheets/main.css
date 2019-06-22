@@ -236,3 +236,12 @@ div .form-inputx {
     padding-top: 10px;
     min-height: 100vh;
 }
+
+.hide-el {
+	visibility: hidden;
+	height: 0px;
+}
+
+.show-el {
+	visibility: visible;
+}
