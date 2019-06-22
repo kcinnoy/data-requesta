@@ -73,7 +73,7 @@ class ApplicationController < Sinatra::Base
       if logged_in?
         @show_user = @current_user.username
       else
-        @show_user = ""
+        @show_user = "Log in"
       end
     end
 
@@ -110,7 +110,7 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    
+
   end
 
 

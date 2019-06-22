@@ -269,10 +269,7 @@ section {
     background: #f7f7f7;
 }
 
-.main-content {
-    padding-top: 20px;
-    min-height: 100vh;
-}
+
 
 @media (max-width: 991px) {
     .main-content {
