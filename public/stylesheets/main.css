@@ -207,3 +207,15 @@ ul {
     font-size: 24px;
     margin-right: 12px;
 }*/
+
+li.list-grp-bdy {
+	display: flex;
+}
+
+div.post-img {
+	width: 50px;
+	background: lightgrey;
+	text-align: center;
+	margin-right: 15px;
+	padding-top: 15px
+}

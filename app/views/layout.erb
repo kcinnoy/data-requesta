@@ -48,16 +48,55 @@
                 <!-- <li><i class="fa fa-bell-o"></i>Posts</li>
                 <li><i class="fa fa-envelope-o"></i>categories</li> -->
                 <li><i class="fa fa-user-circle-o"></i></li>
-                <li><p id="nav-usr-txt">John Smith</p>
-                <li><i class="fa fa-caret-down"></i></li>
+                <li><p id="nav-usr-txt"><a href="#exampleModal" data-toggle="modal" data-target="#exampleModal"><%=show_username%></a></p>
               </ul>
             </header>
-            <!-- HEADER DESKTOP-->
+
 
             <!-- MAIN CONTENT-->
+          
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
             <%=yield%>
             <!-- END MAIN CONTENT-->
-            <!-- END PAGE CONTAINER-->
+            <div class="modal " id="#exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            <!-- END PAGE CONTAINER
           </div>
         </div>
     </div>
@@ -66,7 +105,8 @@
     <script src="/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script> --> -->
+    <script src="/vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
     <script src="/vendor/wow/wow.min.js"></script>
 
