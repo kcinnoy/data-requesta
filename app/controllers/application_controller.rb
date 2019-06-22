@@ -1,5 +1,9 @@
 require './config/environment'
 require 'rack-flash'
+require 'chartkick'
+# require 'chart.js'
+# require 'Chart.bundle'
+
 
 class ApplicationController < Sinatra::Base
 
@@ -125,11 +129,5 @@ class ApplicationController < Sinatra::Base
         @allowed = false
       end
     end
-
-
   end
-
-
-
-
 end

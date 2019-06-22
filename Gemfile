@@ -11,6 +11,8 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'rack-flash3'
+gem 'chartkick'
+gem 'chartjs-ror'
 gem 'tux'
 
 
