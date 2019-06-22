@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   get '/posts/new' do
     show_username
     if logged_in?
-      erb :'/posts/new'
+      erb :'/posts/new1'
     else
       redirect '/'
     end

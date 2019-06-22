@@ -245,3 +245,8 @@ div .form-inputx {
 .show-el {
 	visibility: visible;
 }
+
+.btn-dr{
+	background: rgba(178,223,219 ,1);
+	color: black;
+}
