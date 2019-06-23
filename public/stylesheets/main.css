@@ -229,7 +229,7 @@ div .form-inputx {
 
 a.log-sign-btn-modal {
 	margin-right: 10px;
-	color: black;
+	color: black !important;
 }
 
 .fail-logsignx {
