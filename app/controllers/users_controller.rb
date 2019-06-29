@@ -2,10 +2,8 @@ class UsersController < ApplicationController
 
 
   get '/profile' do
-    show_username
     @current_user = current_user
     @user = @current_user
-    show_username
     if logged_in?
       erb :'users/profile'
     else
@@ -15,7 +13,6 @@ class UsersController < ApplicationController
 
 
   patch '/users/:id' do
-        show_username
         @user = current_user
         if params[:user][:username].empty? || params[:user][:email].empty?
            erb :'users/profile'

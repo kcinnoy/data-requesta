@@ -12,7 +12,7 @@
                               <a class="btn btn-lg btn-block btn-dr" href="/posts/new" role="button"><i class="fa fa-plus-circle icon-space"></i> New Post</a>
                           </div>
                           <ul class="list-group list-group-flush">
-                            <% Post.all.each do |post| %>
+                            <% all_posts_.each do |post| %>
                               <div>
                                 <li class="list-group-item list-grp-bdy">
                                   <div class="post-img">
@@ -20,9 +20,7 @@
                                   </div>
                                   <div>
                                   <% post.id %><a href="/posts/<%= post.id %>"><%= post.description %></a><br>
-                                  <% post.user_id %>
-                                  <% u_name = User.find(post.user_id).username %>
-                                  posted by: <%= u_name %><br>
+                                  posted by: <%= post.user.username%><br>
                                 </div>
                                 </li>
                               </div>

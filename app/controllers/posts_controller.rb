@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   get '/posts' do
-    show_username
     if logged_in?
       erb :'/posts/all'
     else
@@ -10,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   get '/posts/new' do
-    show_username
     if logged_in?
       erb :'/posts/new'
     else
@@ -36,7 +34,6 @@ class PostsController < ApplicationController
   end
 
   get '/posts/:id' do
-    show_username
     if logged_in?
       @post = Post.find(params[:id])
       @user_n = User.find(@post.user_id).username

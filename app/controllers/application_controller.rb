@@ -17,9 +17,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    current_user
-    available_posts
-    show_username
     if logged_in?
       erb :home
     else
@@ -101,6 +98,10 @@ class ApplicationController < Sinatra::Base
       @user_id_ = @post.user_id
       @user_id_n = User.find(params[user_id_])
       @user_name_ = @user_id_n.username
+    end
+
+    def all_posts_
+      @all_posts = Post.all
     end
 
     def tog_el

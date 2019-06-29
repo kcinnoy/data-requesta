@@ -14,7 +14,7 @@
                                   looking for and people from around the world will provide the data you've been looking for! </p>
                             </div>
                             <ul class="list-group list-group-flush">
-                              <% Post.all.each do |post| %>
+                              <% all_posts_.each do |post| %>
                                 <div>
                                   <li class="list-group-item list-grp-bdy">
                                     <div class="post-img">
@@ -22,9 +22,7 @@
                                     </div>
                                     <div>
                                     <% post.id %><a href="/posts/<%= post.id %>"><%= post.description %></a><br>
-                                    <% post.user_id %>
-                                    <% u_name = User.find(post.user_id).username %>
-                                    Posted by: <%= u_name %> (ID:<%= post.user_id%>)<br>
+                                    Posted by: <%= post.user.username %> (ID:<%= post.user_id%>)<br>
                                   </div>
                                   </li>
                                 </div>
