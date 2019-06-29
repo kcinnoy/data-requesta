@@ -1,28 +1,6 @@
 class UsersController < ApplicationController
 
 
-  # post '/signup' do
-  #   if params[:username].empty? || params[:email].empty? || params[:password].empty?
-  #     # redirect '/signup'
-  #
-  #   else
-  #     @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-  #     session[:user_id] = @user.id
-  #     redirect '/posts'
-  #   end
-  # end
-
-
-  # post '/login' do
-  #   @user = User.find_by(params[:id])
-  #   if @user.authenticate(params[:password])
-  #     session[:user_id] = @user.id
-  #     redirect '/tweets'
-  #   else
-  #     redirect '/'
-  #   end
-  # end
-
   get '/profile' do
     show_username
     @current_user = current_user
@@ -35,19 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # post '/posts' do
-  #   if logged_in? && params[:title] != ""
-  #     @post = Post.create(params[:post])
-  #     @post.user = @current_user
-  #     @post.save
-  #     puts "#{@post.user}"
-  #     puts "#{@current_user.username}"
-  #
-  #     redirect "/posts/#{@post.id}"
-  #   else
-  #     redirect '/'
-  #   end
-  # end
 
   patch '/users/:id' do
         show_username

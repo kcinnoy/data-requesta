@@ -28,23 +28,23 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    if params[:username].empty? || params[:email].empty? || params[:password].empty?
+    if User.exists?(username: params[:username]) || User.exists?(email: params[:email])
       fail_signup_msg
       redirect '/'
     else
-      @username = params[:username]
-      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-      session[:user_id] = @user.id
-      redirect '/posts'
+      if params[:username].empty? || params[:email].empty? || params[:password].empty?
+        fail_signup_msg
+        redirect '/'
+      else
+        @username = params[:username]
+        @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+        session[:user_id] = @user.id
+        redirect '/posts'
+      end
     end
   end
 
   post '/login' do
-    # @username = params[:username]
-    # @user = User.find_by(params[:user_id])
-    # if @user.authenticate(params[:password])
-    #   session[:user_id] = @user.id
-    #   redirect '/posts'
     @user = User.find_by(:username => params[:username])
        if @user && @user.authenticate(params[:password])
            session[:user_id] = @user.id
