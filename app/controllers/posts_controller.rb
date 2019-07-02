@@ -34,23 +34,23 @@ class PostsController < ApplicationController
   end
 
   get '/posts/:id' do
-    if logged_in?
+    redirect_if_not_logged_in
       @post = Post.find(params[:id])
       @user_n = User.find(@post.user_id).username
       erb :'/posts/show_post'
-    else
-      redirect '/'
-    end
   end
 
-  get '/posts/:id/post' do
-    if logged_in?
-      @post = Post.find_by(params[:id])
-      erb :'/post/edit_post'
-    else
-      redirect '/'
-    end
-  end
+  # get '/posts/:id/post' do
+  #   if logged_in?
+  #     @post = Post.find_by(params[:id])
+  #     erb :'/post/edit_post'
+  #   else
+  #     redirect '/'
+  #   end
+  # end
+
+
+
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
@@ -79,13 +79,29 @@ class PostsController < ApplicationController
  end
 
 delete '/posts/:id/delete' do
-  if logged_in?
+  redirect_if_not_logged_in
     @post = Post.find(params[:id])
-    @post.delete
-    erb :home
-  else
-    redirect "/"
-  end
+    if allow_edit?
+      @post.delete
+      redirect "/"
+    else
+      redirect "/"
+    end
 end
+
+#
+# delete '/posts/:id/delete' do
+#   if logged_in?
+#     @post = Post.find(params[:id])
+#     if allow_edit?
+#       @post.delete
+#       redirect "/"
+#     else
+#       redirect "/"
+#     end
+#   else
+#     redirect "/"
+#   end
+# end
 
 end

@@ -33,7 +33,6 @@ class ApplicationController < Sinatra::Base
         fail_signup_msg
         redirect '/'
       else
-        @username = params[:username]
         @user = User.create(username: params[:username], email: params[:email], password: params[:password])
         session[:user_id] = @user.id
         redirect '/posts'
@@ -94,11 +93,11 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    def post_username
-      @user_id_ = @post.user_id
-      @user_id_n = User.find(params[user_id_])
-      @user_name_ = @user_id_n.username
-    end
+    # def post_username
+    #   @user_id_ = @post.user_id
+    #   @user_id_n = User.find(params[user_id_])
+    #   @user_name_ = @user_id_n.username
+    # end
 
     def all_posts_
       @all_posts = Post.all
@@ -119,6 +118,13 @@ class ApplicationController < Sinatra::Base
         "hide-el"
       end
     end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect '/'
+      end
+    end
+
 
     def allow_edit?
       puts "c_user#{@current_user.id}"

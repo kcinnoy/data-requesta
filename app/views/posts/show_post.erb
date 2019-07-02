@@ -16,12 +16,7 @@
                                 <div>
                                   Title: <%= @post.title %><br>
                                   Description: <a href="/posts/<%= @post.id %>"><%= @post.description %></a><br>
-                                <% @post.user_id %>
-                                <% u_name = User.find(@post.user_id).username %>
-                                Posted by: <%= u_name %><br><br>
-
-
-
+                                  Posted by: <%= @post.user.username%><br><br>
                               </div>
 
                             </div>
